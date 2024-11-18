@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>           
+        body {
+            font-family: Georgia, serif;
+            background-color: #f8f9fa; /* Light background for contrast */
+            color: #343a40; /* Dark text color for readability */
+        }
+        h1 {
+            color: RoyalBlue;
+            margin-bottom: 20px; /* Space below the heading */
+            text-align: center; /* Center the heading */
+        }
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto; 
+            padding: 20px;
+            background-color: white; 
+            border-radius: 5px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+        }
+        .form-control {
+            margin-bottom: 15px; 
+        }
+        .btn-custom {
+            background-color: RoyalBlue; 
+            color: white; 
+            border: none; 
+        }
+        .btn-custom:hover {
+            background-color: #0056b3; 
+        } 
+      
+        .navContainer{
+            position: relative; 
+            height: 50px; 
+        }
+        .divLeftAlign{
+            position: absolute; 
+            right: 0; 
+            top: 0;
+            padding: 10px;
+        }
+    </style>        
+</head>
+<body style="background-color:AliceBlue;">
+        
+<div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+    <img src="{{ url_for('static', filename='news_logo.jpg') }}" class="rounded mx-auto d-block">   
+    <div class = "navContainer">
+        <div class = "divLeftAlign">
+        <ul class="nav">
+         <li class="nav-item">
+            <a class="nav-link" href='/'>Home</a>
+          </li>                 
+          <li class="nav-item">
+            <a class="nav-link" href='/category'>News by Category</a>
+          </li>
+          
+        </ul>
+        </div>
+    </div>
+</div>
+
+<h1>News from a specific location</h1>
+    
+<div class="form-container">
+    <form action="/data/country" method="POST">
+        <div class="mb-3">
+            <label for="category" class="form-label">Please choose a location:</label>
+            <select id="country" name="country" class="form-select">
+                <option value="au">Australia</option>
+                <option value="in">India</option>
+                <option value="fr">France</option>
+                <option value="jp">Japan</option>
+                <option value="kr">Korea</option>
+                <option value="gb">UK</option>
+                <option value="us">USA</option>  
+            </select>
+        </div>
+        <input type="submit" class="btn btn-custom" value="Go"> 
+    </form>
+</div>  
+    
+</body>    
+</html>
+
+
+
